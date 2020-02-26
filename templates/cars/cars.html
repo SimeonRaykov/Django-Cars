@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+</head>
+<body>
+<div class="text-center mt-5">
+<p>Fastest car is {{ fastest_car.car_make_id__car_make }}
+    {{ fastest_car.car_model }} with horsepower of
+    {{ fastest_car.horsepower }}
+</p>
+{% if latest_car_list %}
+{% for car in latest_car_list %}
+   <p>Car model - {{car.car_make_id__car_make}} {{car.car_model }}</p>
+    <p>Horsepower - {{car.horsepower}}</p>
+{% endfor %}
+{% else %}
+<p>No cars</p>
+{% endif %}
+</div>
+</body>
+</html>
